@@ -36,7 +36,7 @@ void monty_sub(stack_t **h, unsigned int n)
 {
 	if (!sub_top(h))
 	{
-		printf(stderr, "L%d: can't add, stack too short\n", n);
+		fprintf(stderr, "L%d: can't add, stack too short\n", n);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -54,13 +54,13 @@ void monty_div(stack_t **h, unsigned int n)
 
 	if (fd == 0)
 	{
-		printf(stderr, "L%d: can't div, stack too short\n", n);
+		fprintf(stderr, "L%d: can't div, stack too short\n", n);
 		exit(EXIT_FAILURE);
 	}
 
 	if (fd == -1)
 	{
-		printf(stderr, "L%d: division by zero\n", n);
+		fprintf(stderr, "L%d: division by zero\n", n);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -75,7 +75,7 @@ void monty_mul(stack_t **h, unsigned int n)
 {
 	if (!mul_top(h))
 	{
-		printf(stderr, "L%d: can't mul, stack too short\n", n);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", n);
 		exit(EXIT_FAILURE);
 	}
 }
