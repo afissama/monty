@@ -22,7 +22,7 @@ void monty_pall(stack_t **h, unsigned int __attribute__ ((unused)) n)
 }
 
 /**
- * monty_pall - push bytecode execution
+ * monty_pint - print the first element
  * 
  * @h: heade 
  * @n: the number n 
@@ -37,3 +37,18 @@ void monty_pint(stack_t **h, unsigned int line)
     print_first_stack(*h);
 }
 
+/**
+ * monty_pop - remove the first element from the stack
+ * 
+ * @h: heade 
+ * @n: the number n 
+ */
+void monty_pop(stack_t **h, unsigned int line)
+{
+    if (h== NULL || *h == NULL)
+    {
+        printf("L%d: can't pop an empty stack\n", line);
+        exit(EXIT_FAILURE);
+    }
+    remove_top(h);
+}

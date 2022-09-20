@@ -62,13 +62,10 @@ int remove_top(stack_t **h)
 {
 	stack_t *temp;
 
-	if (h == NULL)
+	if (h == NULL || *h == NULL)
 		return (-1);
 	temp = *h;
-
 	*h = (*h)->next;
-	(*h)->prev = NULL;
 	free(temp);
-
 	return (0);
 }
