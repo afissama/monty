@@ -37,6 +37,9 @@ void monty(stack_t **h, char *tk, char *tk2, unsigned int line)
 			break;
 		}
 		if (i == 10)
+		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line, tk);
+			exit(EXIT_FAILURE);
+		}
 	}
 }
