@@ -31,7 +31,7 @@ void monty_pint(stack_t **h, unsigned int line)
 {
 	if (h == NULL || *h == NULL)
 	{
-		printf("L%d: can't pint, stack empty\n", line);
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line);
 		exit(EXIT_FAILURE);
 	}
 	print_first_stack(*h);
@@ -47,7 +47,7 @@ void monty_pop(stack_t **h, unsigned int line)
 {
 	if (h == NULL || *h == NULL)
 	{
-		printf("L%d: can't pop an empty stack\n", line);
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line);
 		exit(EXIT_FAILURE);
 	}
 	remove_top(h);
@@ -63,7 +63,7 @@ void monty_swap(stack_t **h, unsigned int line)
 {
 	if (!swap_stack(h))
 	{
-		printf("L%d: can't swap, stack too short\n", line);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 }
