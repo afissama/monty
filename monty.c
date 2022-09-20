@@ -24,11 +24,11 @@ int main(int argc, char const *argv[])
 	nbline = 0;
 	while (fgets(line, sizeof(line), fd))
 	{
+		nbline++;
 		line[strcspn(line, "\n")] = 0;
 		getwords(line, words, 2);
 		if (words[0])
 			monty(&stack, words[0], words[1], nbline);
-		nbline++;
 	}
 	fclose(fd);
 	return 0;
