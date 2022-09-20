@@ -36,7 +36,7 @@ void monty_sub(stack_t **h, unsigned int n)
 {
 	if (!sub_top(h))
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", n);
+		fprintf(stderr, "L%d: can't sub, stack too short\n", n);
 		exit(EXIT_FAILURE);
 	}
 }
