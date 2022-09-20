@@ -13,7 +13,12 @@ size_t stack_len(stack_t *h)
     return 1 + stack_len(h->next);
 }
 
-
+/**
+ * add_top - add top elements
+ * 
+ * @h: head of stack 
+ * Return: int 
+ */
 int add_top(stack_t **h)
 {
 	stack_t *tmp;
@@ -26,5 +31,25 @@ int add_top(stack_t **h)
     (*h)->next = tmp->next;
     free(tmp);
 
+    return (1); 
+}
+
+/**
+ * sub_top - sub top elements
+ * 
+ * @h: head of stack 
+ * Return: int 
+ */
+int sub_top(stack_t **h)
+{
+	stack_t *tmp;
+
+    if (h == NULL || *h == NULL || stack_len(*h) < 2)
+		return(0);
+    
+    tmp = (*h)->next;
+    (*h)->n = tmp->n - (*h)->n;
+    (*h)->next = tmp->next;
+    free(tmp);
     return (1); 
 }
