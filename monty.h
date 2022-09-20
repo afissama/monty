@@ -44,15 +44,21 @@ int swap_stack(stack_t **h);
 int remove_top(stack_t **h);
 int add_top(stack_t **h);
 int sub_top(stack_t **h);
+int div_top(stack_t **h);
+int mul_top(stack_t **h);
+int mod_top(stack_t **h);
 void monty_pop(stack_t **h, unsigned int line);
 void monty_pint(stack_t **h, unsigned int line);
 void monty_push(stack_t **h, unsigned int n);
 void monty_swap(stack_t **h, unsigned int n);
 void monty_add(stack_t **h, unsigned int n);
 void monty_sub(stack_t **h, unsigned int n);
+void monty_div(stack_t **h, unsigned int n);
+void monty_mul(stack_t **h, unsigned int n);
+void monty_mod(stack_t **h, unsigned int n);
 void monty_nop(stack_t __attribute__ ((unused)) **h, unsigned int __attribute__ ((unused)) n);
 void monty_pall(stack_t **h, unsigned int __attribute__ ((unused)) n);
 void monty(stack_t **h, char *tk, char *tk2, unsigned int line);
 
-extern instruction_t instruction[10];
+extern instruction_t instruction[11];
 #endif
