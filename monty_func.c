@@ -31,7 +31,7 @@ void monty(stack_t **h, char *tk, char *tk2, unsigned int line)
 					break;
 				}
 				fprintf(stderr, "L%d: usage: push integer\n", line);
-				break;
+				exit(EXIT_FAILURE);
 			}
 			instruction[i].f(h, line);
 			break;
