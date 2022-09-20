@@ -52,3 +52,18 @@ void monty_pop(stack_t **h, unsigned int line)
     }
     remove_top(h);
 }
+
+/**
+ * monty_pop - remove the first element from the stack
+ * 
+ * @h: heade 
+ * @n: the number n 
+ */
+void monty_swap(stack_t **h, unsigned int line)
+{
+    if (!swap_stack(h))
+    {
+        printf("L%d: can't swap, stack too short\n", line);
+        exit(EXIT_FAILURE);
+    } 
+}

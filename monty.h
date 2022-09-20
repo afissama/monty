@@ -39,10 +39,13 @@ char **getwords(char *line, char *words[], int maxwords);
 stack_t *add_stack_begin(stack_t **head, int n);
 int print_stack(stack_t *head);
 int print_first_stack(stack_t *h);
+size_t stack_len(stack_t *h);
+int swap_stack(stack_t **h);
 int remove_top(stack_t **h);
 void monty_pop(stack_t **h, unsigned int line);
 void monty_pint(stack_t **h, unsigned int line);
 void monty_push(stack_t **h, unsigned int n);
+void monty_swap(stack_t **h, unsigned int n);
 void monty_pall(stack_t **h, unsigned int __attribute__ ((unused)) n);
 void monty(stack_t **h, char *tk, char *tk2, unsigned int line);
 

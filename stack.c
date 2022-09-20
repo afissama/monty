@@ -69,3 +69,25 @@ int remove_top(stack_t **h)
 	free(temp);
 	return (0);
 }
+
+/**
+ * swap_stack- swap the two first element in the stack
+ * 
+ * @h: stack head node 
+ * Return: int 
+ */
+int swap_stack(stack_t **h)
+{
+	stack_t **node_a, *tmp;
+	
+	if (h == NULL || *h == NULL || stack_len(*h) < 2)
+		return(0);
+
+	node_a = &(*h)->next;
+	tmp = *h;
+	
+	(*h) = (*node_a);
+	(tmp)->next = (*node_a)->next;
+	(*h)->next = tmp;
+	return (1);
+}
