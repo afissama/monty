@@ -1,14 +1,14 @@
 #include "monty.h"
 /**
- * @brief 
- * 
- * @param argc 
- * @param argv 
- * @return int 
+ * main - Entry function
+ *
+ * @argc: nb of arguments
+ * @argv: arguments
+ * Return: int
  */
 int main(int argc, char const *argv[])
 {
-	FILE* fd;
+	FILE *fd;
 	char line[500];
 	unsigned int nbline;
 	char *words[2];
@@ -31,43 +31,44 @@ int main(int argc, char const *argv[])
 			monty(&stack, words[0], words[1], nbline);
 	}
 	fclose(fd);
-	return 0;
+	return (0);
 }
 
 /**
- * @brief 
- * 
- * @param line 
- * @param words 
- * @param maxwords 
- * @return char** 
+ * getwords - get words from line
+ *
+ * @line: the line
+ * @words: words
+ * @maxwords: default value  2
+ * Return: char**
  */
-char **getwords(char *line, char* words[], int maxwords)
+char **getwords(char *line, char *words[], int maxwords)
 {
 	char *p = line;
-	int nwords = 0;
+	int nwords;
+
+	nwords = 0;
 	words[0] = NULL;
 	words[1] = NULL;
-
 	if (line == NULL)
 		return (NULL);
 
-	while(1)
+	while (1)
 	{
-		while(*p == ' ')
+		while (*p == ' ')
 			p++;
-		if(*p == '\0')
+		if (*p == '\0')
 		{
-			return words;
+			return (words);
 		}
 		words[nwords++] = p;
-		while(*p != ' ' && *p != '\0')
+		while (*p != ' ' && *p != '\0')
 			p++;
-		if(*p == '\0')
-			return words;
+		if (*p == '\0')
+			return (words);
 
 		*p++ = '\0';
-		if(nwords >= maxwords)
-			return words;
+		if (nwords >= maxwords)
+			return (words);
 	}
 }

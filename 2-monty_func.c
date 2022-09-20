@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * monty_mul - multiply first two stack
+ * monty_mod - compute modulo of first two stack
  *
  * @h: header
  * @n: the number n

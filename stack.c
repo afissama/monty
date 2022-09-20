@@ -1,10 +1,10 @@
 #include "monty.h"
 /**
  * add_stack_begin - add node at the stack beginning
- * 
- * @head: stack head node 
+ *
+ * @head: stack head node
  * @n: n value
- * Return: stack_t* 
+ * Return: stack_t*
  */
 stack_t *add_stack_begin(stack_t **head, int n)
 {
@@ -22,9 +22,9 @@ stack_t *add_stack_begin(stack_t **head, int n)
 }
 /**
  * print_stack - prints stack from top to end
- * 
- * @head: node head 
- * Return: int 
+ *
+ * @h: node head
+ * Return: int
  */
 int print_stack(stack_t *h)
 {
@@ -37,10 +37,10 @@ int print_stack(stack_t *h)
 }
 
 /**
- * print_stack - prints stack first element of stack
- * 
- * @head: node head 
- * Return: int 
+ * print_first_stack - prints stack first element of stack
+ *
+ * @h: node head
+ * Return: int
  */
 int print_first_stack(stack_t *h)
 {
@@ -54,9 +54,9 @@ int print_first_stack(stack_t *h)
 
 /**
  * remove_top - remove first element of the stack
- * 
- * @h: stack head node 
- * Return: int 
+ *
+ * @h: stack head node
+ * Return: int
  */
 int remove_top(stack_t **h)
 {
@@ -72,20 +72,20 @@ int remove_top(stack_t **h)
 
 /**
  * swap_stack- swap the two first element in the stack
- * 
- * @h: stack head node 
- * Return: int 
+ *
+ * @h: stack head node
+ * Return: int
  */
 int swap_stack(stack_t **h)
 {
 	stack_t **node_a, *tmp;
-	
+
 	if (h == NULL || *h == NULL || stack_len(*h) < 2)
-		return(0);
+		return (0);
 
 	node_a = &(*h)->next;
 	tmp = *h;
-	
+
 	(*h) = (*node_a);
 	(tmp)->next = (*node_a)->next;
 	(*h)->next = tmp;

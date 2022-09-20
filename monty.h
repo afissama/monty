@@ -16,9 +16,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -31,10 +31,12 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern instruction_t instruction[11];
+void init_instruct(void);
 char **getwords(char *line, char *words[], int maxwords);
 stack_t *add_stack_begin(stack_t **head, int n);
 int print_stack(stack_t *head);
@@ -56,9 +58,7 @@ void monty_sub(stack_t **h, unsigned int n);
 void monty_div(stack_t **h, unsigned int n);
 void monty_mul(stack_t **h, unsigned int n);
 void monty_mod(stack_t **h, unsigned int n);
-void monty_nop(stack_t __attribute__ ((unused)) **h, unsigned int __attribute__ ((unused)) n);
+void monty_nop(stack_t **h, unsigned int n);
 void monty_pall(stack_t **h, unsigned int __attribute__ ((unused)) n);
 void monty(stack_t **h, char *tk, char *tk2, unsigned int line);
-
-extern instruction_t instruction[11];
 #endif

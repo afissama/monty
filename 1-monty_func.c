@@ -3,7 +3,7 @@
  * monty_add - remove the first element from the stack
  *
  * @h: header
- * @n: the number n
+ * @line: instruction line nb
  */
 void monty_add(stack_t **h, unsigned int line)
 {
@@ -16,11 +16,12 @@ void monty_add(stack_t **h, unsigned int line)
 
 /**
  * monty_nop - nothing
- * 
+ *
  * @n: a number
  * @h: the stack
  */
-void monty_nop(stack_t __attribute__ ((unused)) **h, unsigned int __attribute__ ((unused)) n)
+void monty_nop(stack_t __attribute__ ((unused)) **h,
+	 __attribute__ ((unused))unsigned int n)
 {
 
 }
@@ -29,7 +30,7 @@ void monty_nop(stack_t __attribute__ ((unused)) **h, unsigned int __attribute__ 
  * monty_sub - remove the first element from the stack
  *
  * @h: header
- * @n: the number n
+ * @n: instruction line nb
  */
 void monty_sub(stack_t **h, unsigned int n)
 {
@@ -40,10 +41,10 @@ void monty_sub(stack_t **h, unsigned int n)
 	}
 }
 /**
- * monty_div - remove the first element from the stack
+ * monty_div - divide the first two stack
  *
  * @h: header
- * @n: the number n
+ * @n: instruction line nb
  */
 void monty_div(stack_t **h, unsigned int n)
 {
