@@ -14,13 +14,13 @@ void monty_mod(stack_t **h, unsigned int n)
 
 	if (fd == 0)
 	{
-		printf("L%d: can't mod, stack too short\n", n);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", n);
 		exit(EXIT_FAILURE);
 	}
 
 	if (fd == -1)
 	{
-		printf("L%d: division by zero\n", n);
+		fprintf(stderr, "L%d: division by zero\n", n);
 		exit(EXIT_FAILURE);
 	}
 }
