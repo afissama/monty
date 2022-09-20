@@ -35,6 +35,7 @@ int main(int argc, char const *argv[])
 		if (words[0])
 			monty(&stack, words[0], words[1], nbline);
 	}
+	free_stack(stack);
 	fclose(fd);
 	return (0);
 }

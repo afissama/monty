@@ -22,3 +22,20 @@ int mod_top(stack_t **h)
 
 	return (1);
 }
+
+/**
+ * free_stack - free stack
+ *
+ * @h: stack head
+ */
+void free_stack(stack_t *h)
+{
+	stack_t *current;
+
+	while (h != NULL)
+	{
+		current = h;
+		h = h->next;
+		free(current);
+	}
+}

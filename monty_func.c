@@ -28,13 +28,15 @@ void monty(stack_t **h, char *tk, char *tk2, unsigned int line)
 				if (tk2 != NULL)
 				{
 					instruction[i].f(h, atoi(tk2));
-					continue;
+					break;
 				}
-				printf("L%d: usage: push integer\n", line);
-				continue;
+				fprintf(stderr, "L%d: usage: push integer\n", line);
+				break;
 			}
 			instruction[i].f(h, line);
-			continue;
+			break;
 		}
+		if (i == 10)
+			fprintf(stderr, "L%d: unknown instruction %s\n", line, tk);
 	}
 }
